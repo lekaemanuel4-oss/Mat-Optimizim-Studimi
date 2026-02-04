@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulat e Smart Study Time Optimizer</title>
+<style>
+body { font-family: Arial, sans-serif; padding: 20px; background: #f0f0f0; }
+h1, h2 { color: #333; text-align: center; }
+p, li { font-size: 1.1em; margin: 10px 0; }
+code { background-color: #e8e8e8; padding: 2px 4px; border-radius: 4px; }
+ul { max-width: 800px; margin: auto; }
+.nav { text-align: center; margin-top: 20px; }
+.nav a { display: inline-block; margin: 5px; padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px; }
+.nav a:hover { background-color: #45a049; }
+</style>
+</head>
+<body>
+<h1>Formulat e Smart Study Time Optimizer</h1>
+<h2>1. Kushti i kohës totale</h2>
+<p>Kohët e ndara për secilën lëndë duhet të përbëjnë totalin e orëve të disponueshme:</p>
+<code>t1 + t2 + ... + tn = T</code>
+
+
+<h2>2. Indeksi i Nevojës për Studim</h2>
+<p>Indeksi përcakton sa shumë kohë duhet të kushtohet secilës lëndë:</p>
+<code>Ni = (pi × di) / ei</code>
+<ul>
+<li>pi = Prioriteti i lëndës (1–5)</li>
+<li>di = Vështirësia e lëndës (1–5)</li>
+<li>ei = Niveli i përgatitjes së nxënësit (1–5)</li>
+</ul>
+
+
+<h2>3. Shpërndarja optimale e kohës</h2>
+<p>Kohë e dedikuar për secilën lëndë:</p>
+<code>ti = T × (Ni / Σ Ni)</code>
+
+
+<h2>4. Funksioni i Produktivitetit</h2>
+<p>Studimi i vazhdueshëm ul produktivitetin sipas funksionit eksponencial:</p>
+<code>P(t) = 100 × e^(-0.15 × t)</code>
+<p>t = orë pa pushim</p>
+
+
+<h2>5. Efikasiteti Total</h2>
+<p>Efikasiteti i përgjithshëm i studimit llogaritet si:</p>
+<code>E = Σ (ti × P(ti))</code>
+
+
+<div class="nav">
+<a href="kryesore">Faqja Kryesore</a>
+<a href="kalkuatori">Kalkulatori</a>
+</div>
+</body>
+</html>
