@@ -1,139 +1,272 @@
 <!DOCTYPE html>
 <html lang="sq">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Optimizimi i Kohës së Studimit</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimizuesi Inteligjent i Kohës</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #05080a;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --blue-glow: #00d2ff;
+            --green-glow: #3fef7d;
+            --purple-glow: #a29bfe;
+        }
 
-<style>
-/* BODY */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 50% -20%, #1a2a3a 0%, transparent 50%),
+                radial-gradient(circle at 10% 10%, rgba(0, 210, 255, 0.05) 0%, transparent 30%);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            background: linear-gradient(to bottom, #fff 40%, #6dd5ed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text; color: transparent;
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: #888;
+            margin-bottom: 80px;
+            letter-spacing: 1px;
+        }
+
+        .sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            padding: 10px;
+        }
+
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .section {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 60px 40px;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+      
+        .icon-wrapper {
+            font-size: 3.5rem;
+            margin-bottom: 35px; 
+            position: relative;
+            transition: transform 0.5s ease;
+        }
+
+       
+        .blue-i { color: var(--blue-glow); text-shadow: 0 0 20px rgba(0, 210, 255, 0.4); }
+        .green-i { color: var(--green-glow); text-shadow: 0 0 20px rgba(63, 239, 125, 0.4); }
+        .purple-i { color: var(--purple-glow); text-shadow: 0 0 20px rgba(162, 155, 254, 0.4); }
+
+        .section h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 0 0 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section p {
+            font-size: 0.95rem;
+            color: #777;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        
+        .card-link:hover .section {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-15px);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .card-link:hover .icon-wrapper {
+            transform: scale(1.15);
+        }
+
+        #kalkulatori:hover .section { box-shadow: 0 20px 40px rgba(0, 210, 255, 0.1); border-color: var(--blue-glow); }
+        #monitorimi:hover .section { box-shadow: 0 20px 40px rgba(63, 239, 125, 0.1); border-color: var(--green-glow); }
+        #formulat:hover .section { box-shadow: 0 20px 40px rgba(162, 155, 254, 0.1); border-color: var(--purple-glow); }
+
+        @media (max-width: 768px) {
+            .sections { gap: 20px; }
+            .section { padding: 40px 20px; }
+        }
+
+        :root {
+  
+  --bg-color: #0a0e12;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --text-color: #eeeeee;
+  --accent-color: #00d2ff;
+      }
+
+
+[data-theme="light"] {
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --text-color: #1e293b;
+  --accent-color: #0077b6;
+}
+
 body {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #2c3e50, #4ca1af);
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    text-align: center;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s ease, color 0.3s ease; 
 }
 
-/* KONTAINER */
-.container {
-    width: 95%;
-    max-width: 1000px;
-    margin-top: 60px;
-}
-
-/* TITULLI */
-h1 {
-    font-size: 2.8em;
-    margin-bottom: 20px;
-    font-weight: 600;
-    color: #f5f5f5;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-}
-
-/* PARAGRAFI */
-p.lead {
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin-bottom: 50px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    color: #e0e0e0;
-}
-
-/* SECTIONS CONTAINER */
-.sections {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-}
-
-/* SECILA KUTI */
-.section {
-    flex: 1 1 300px;
-    border-radius: 15px;
-    padding: 30px 25px;
-    color: #fff;
-    font-weight: 500;
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--accent-color);
+} 
+   
+  
+.theme-toggle {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 2001;
+    background: var(--container-bg); 
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     cursor: pointer;
-    transition: all 0.3s ease;
-    min-height: 200px;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    background: #34495e;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.section h2 {
-    margin: 0 0 10px 0;
-    font-size: 1.6em;
-    font-weight: 600;
-    color: #f5f5f5;
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 10px 25px rgba(0, 210, 255, 0.4);
 }
 
-.section p {
-    margin: 0;
-    font-weight: 400;
-    font-size: 1em;
-    color: #dcdcdc;
+.theme-toggle:active {
+    transform: scale(0.95);
 }
 
-/* Ngjyra të ndryshme për secilën kuti */
-#kalkuatori { background: linear-gradient(135deg, #2980b9, #6dd5ed); }
-#efikasitet { background: linear-gradient(135deg, #27ae60, #2ecc71); }
-#formulat { background: linear-gradient(135deg, #8e44ad, #9b59b6); }
 
-/* Hover efekt */
-.section:hover {
-    transform: translateY(-8px) scale(1.05);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.45);
+@media (max-width: 768px) {
+    .theme-toggle {
+        top: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
 }
 
-/* RESPONSIVE */
-@media (max-width: 992px) {
-    .section { flex: 1 1 45%; min-height: 180px; }
-}
 
-@media (max-width: 600px) {
-    h1 { font-size: 2em; }
-    p.lead { font-size: 1em; margin-bottom: 30px; }
-    .section { flex: 1 1 90%; min-height: 150px; padding: 25px 20px; }
-    .section h2 { font-size: 1.4em; }
-    .section p { font-size: 0.95em; }
-}
-</style>
+    </style>
 </head>
 <body>
 
+<button class="theme-toggle" onclick="toggleTheme()" id="themeBtn" aria-label="Ndrysho temën">
+    <i class="fa-solid fa-sun"></i>
+</button>
+
 <div class="container">
-    <h1>Optimizimi i Kohës së Studimit</h1>
-    <p class="lead">Kjo platformë ndihmon nxënësit të planifikojnë dhe menaxhojnë kohën e studimit në mënyrë efektive, duke marrë parasysh prioritetet dhe vështirësinë e lëndëve. Maksimizo produktivitetin dhe shmang lodhjen!</p>
+    <header>
+        <h1>Optimizimi i Kohës</h1>
+        <p class="subtitle">Sistemi juaj inteligjent për menaxhimin e studimeve</p>
+    </header>
+
     
     <div class="sections">
-        <div class="section" id="kalkuatori" onclick="location.href='kalkuatori.html'">
-            <h2>Llogaritësi i Kohës së Studimit</h2>
-            <p>Llogarit kohën optimale për secilën lëndë sipas orëve dhe prioritetit tuaj.</p>
-        </div>
-        <div class="section" id="efikasitet" onclick="location.href='Efikasitet.html'">
-            <h2>Monitorimi i Efikasitetit</h2>
-            <p>Ndërto dhe monitoro efikasitetin e studimit për të marrë maksimumin nga koha e shpenzuar.</p>
-        </div>
-        <div class="section" id="formulat" onclick="location.href='formulat.html'">
-            <h2>Formulat e Përdorura</h2>
-            <p>Shiko të gjitha formulat matematikore të përdorura për të optimizuar kohën dhe për të matur efikasitetin e studimit.</p>
-        </div>
+        <a href="kalkuatori.html" class="card-link" id="kalkulatori">
+            <div class="section">
+                <div class="icon-wrapper blue-i">
+                    <i class="fa-solid fa-calculator"></i>
+                </div>
+                <h2>Llogaritësi</h2>
+                <p>Analizoni ngarkesën tuaj dhe gjeneroni një plan studimi personalizuar.</p>
+            </div>
+        </a>
+
+        <a href="Efikasitet.html" class="card-link" id="monitorimi">
+            <div class="section">
+                <div class="icon-wrapper green-i">
+                    <i class="fa-solid fa-chart-simple"></i>
+                </div>
+                <h2>Efikasiteti</h2>
+                <p>Ndiqni efikasitetin tuaj në kohë reale dhe rritni performancën tuaj akademike.</p>
+            </div>
+        </a>
+
+        <a href="formulat.html" class="card-link" id="formulat">
+            <div class="section">
+                <div class="icon-wrapper purple-i">
+                    <i class="fa-solid fa-atom"></i>
+                </div>
+                <h2>Formulat</h2>
+                <p>Zbuloni matematiken dhe algoritmet që qëndrojnë pas optimizimit të kohës.</p>
+            </div>
+        </a>
     </div>
 </div>
 
+
+<script>
+    function toggleTheme() {
+        const body = document.body;
+        const themeIcon = document.getElementById('theme-icon');
+        if (body.getAttribute('data-theme') === 'dark') {
+            body.setAttribute('data-theme', 'light');
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        } else {
+            body.setAttribute('data-theme', 'dark');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+    }
+</script>
 </body>
 </html>
